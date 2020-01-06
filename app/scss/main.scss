@@ -1,2 +1,5 @@
-@import 'scss/base/_base';
-@import 'scss/base/_typography';
+// import all your scss files into this main scss file.
+// scss compiles and minifies to main.scss file
+
+@import 'app/scss/base/_base';
+@import 'app/scss/base/_typography';
