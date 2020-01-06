@@ -1,11 +1,5 @@
 // Initialize modules
-const {
-  src,
-  dest,
-  watch,
-  series,
-  parallel,
-} = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const concat = require('gulp-concat');
@@ -17,7 +11,7 @@ const uglify = require('gulp-uglify');
 
 // File path variables
 const files = {
-  scssPath: 'app/scss/**/*.scss',
+  scssPath: 'app/scss/main.scss',
   jsPath: 'app/js/**/*.js',
 };
 
@@ -50,7 +44,7 @@ function cacheBustTask() {
 function watchTask() {
   watch(
     ['files.scssPath, files.jsPath'],
-    parallel(scssTask, jsTask),
+    series(parallel(scssTask, jsTask)),
   );
 }
 
